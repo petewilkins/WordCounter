@@ -2,10 +2,9 @@
 
 function Book(text) {
   this.text = text;
-  this.allWords = [];
   this.glossary = [];
   this.wordCounter = {};
-  this.sortedResult = [];
+  this.wordsSorted = [];
 }
 
 Book.prototype.getText = function () {
@@ -13,13 +12,14 @@ Book.prototype.getText = function () {
 };
 
 Book.prototype.splitText = function () {
-  this.allWords = this.text.match(/(\b[^\s]+\b)/g);
-  return this.allWords;
+  return this.text.match(/(\b[^\s]+\b)/g);
 };
 
 Book.prototype.countOccurences = function () {
-  for (var i = 0; i < this.allWords.length; i++) {
-    var word = this.allWords[i];
+  var splitText = this.splitText();
+
+  for (var i = 0; i < splitText.length; i++) {
+    var word = splitText[i];
     if (this.wordCounter.hasOwnProperty(word)) {
       this.wordCounter[word] += 1;
     } else {
@@ -32,10 +32,22 @@ Book.prototype.countOccurences = function () {
 };
 
 Book.prototype.sortOccurences = function () {
+  var wordCounter = this.wordCounter;
+
+  this.glossary.sort(function (a, b) {
+    var wordCountA = wordCounter[a];
+    var wordCountB = wordCounter[b];
+    return wordCountB - wordCountA;
+  });
+
+  return this.glossary;
+};
+
+Book.prototype.printResults = function () {
   for (var i = 0; i < this.glossary.length; i++) {
     var word = this.glossary[i];
-    this.sortedResult.push(word + ' ' + this.wordCounter[word]);
+    this.wordsSorted.push(word + ' ' + this.wordCounter[word]);
   }
 
-  return this.sortedResult;
+  return this.wordsSorted;
 };
