@@ -25,4 +25,14 @@ describe('Book', function () {
       expect(book.countOccurences()).toEqual({ a: 2, story: 1, poem: 1 });
     });
   });
+
+  describe('sortOccurences', function () {
+    it('sorts the words by number of occurrences', function () {
+      book.text = 'A story, a poem';
+      book.getText();
+      book.splitText();
+      book.countOccurences();
+      expect(book.sortOccurences()).toEqual(['a 2', 'story 1', 'poem 1']);
+    });
+  });
 });
