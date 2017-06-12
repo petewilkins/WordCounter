@@ -67,12 +67,19 @@ Book.prototype.numIsPrime = function (number) {
   return number > 1;
 };
 
-var inputFile = './books/the-railway-children.txt';
-var fs = require('fs');
-var bookText = fs.readFileSync(inputFile, 'utf8');
+Book.prototype.Analyse = function () {
+  this.getText();
+  this.countOccurences();
+  this.sortOccurences();
+  console.log(this.printResults());
+};
 
-var book = new Book(bookText);
-book.getText();
-book.countOccurences();
-book.sortOccurences();
-console.log(book.printResults());
+var fs = require('fs');
+
+if (process.argv[2] === undefined) {
+  console.log('Incorrect number of arguments. Suggested use: npm start books/the-railway-children.txt');
+} else {
+  var textFromBook = fs.readFileSync(process.argv[2], 'utf8');
+  var book = new Book(textFromBook);
+  book.Analyse();
+}
