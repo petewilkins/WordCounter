@@ -66,3 +66,13 @@ Book.prototype.numIsPrime = function (number) {
 
   return number > 1;
 };
+
+var inputFile = './books/the-railway-children.txt';
+var fs = require('fs');
+var bookText = fs.readFileSync(inputFile, 'utf8');
+
+var book = new Book(bookText);
+book.getText();
+book.countOccurences();
+book.sortOccurences();
+console.log(book.printResults());

@@ -7,3 +7,6 @@ The application also shows whether the number of times each word appears is a pr
 The application ignores punctuation and capitalisation.
 
 The application was developed using TDD with the Jasmine testing framework.
+
+To run, node start
+To test, node test

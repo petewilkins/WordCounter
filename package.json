@@ -1,0 +1,20 @@
+{
+  "name": "word-counter",
+  "version": "1.0.0",
+  "description": "a word counting application",
+  "main": "src/Book.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node ./src/Book.js",
+    "test": "open SpecRunner.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petewilkins/word-counter.git"
+  },
+  "author": "pete-wilkins",
+  "license": "ISC",
+  "dependencies": {}
+}
