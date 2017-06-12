@@ -20,6 +20,7 @@ Book.prototype.countOccurences = function () {
 
   for (var i = 0; i < splitText.length; i++) {
     var word = splitText[i];
+
     if (this.wordCounter.hasOwnProperty(word)) {
       this.wordCounter[word] += 1;
     } else {
@@ -46,8 +47,22 @@ Book.prototype.sortOccurences = function () {
 Book.prototype.printResults = function () {
   for (var i = 0; i < this.glossary.length; i++) {
     var word = this.glossary[i];
-    this.wordsSorted.push(word + ' ' + this.wordCounter[word]);
+
+    if (this.numIsPrime(this.wordCounter[word])) {
+      this.wordsSorted.push(word + ' - ' + this.wordCounter[word] + ' prime');
+    } else {
+      this.wordsSorted.push(word + ' - ' + this.wordCounter[word]);
+    }
   }
 
   return this.wordsSorted;
+};
+
+Book.prototype.numIsPrime = function (number) {
+  var start = 2;
+  while (start <= Math.sqrt(number)) {
+    if (number % start++ < 1) return false;
+  }
+
+  return number > 1;
 };

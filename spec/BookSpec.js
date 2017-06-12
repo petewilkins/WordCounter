@@ -40,7 +40,17 @@ describe('Book', function () {
       book.splitText();
       book.countOccurences();
       book.sortOccurences();
-      expect(book.printResults()).toEqual(['a 2', 'this 1', "isn't 1", 'story 1', 'just 1', 'string 1']);
+      expect(book.printResults()).toEqual(['a - 2 prime', 'this - 1', "isn't - 1", 'story - 1', 'just - 1', 'string - 1']);
+    });
+  });
+
+  describe('numIsPrime', function () {
+    it('returns true if the number passed to it is a prime', function () {
+      expect(book.numIsPrime(367)).toBe(true);
+    });
+
+    it('returns false if the number passed to it is not prime', function () {
+      expect(book.numIsPrime(368)).toBe(false);
     });
   });
 });
