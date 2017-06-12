@@ -30,34 +30,30 @@ describe('Book', function () {
 
   describe('splitText', function () {
     it('splits input text into an array of words ignoring punctuation', function () {
-      book.getText();
+      book.text = "this isn't a story, just a string!";
       expect(book.splitText()).toEqual(['this', "isn't", 'a', 'story', 'just', 'a', 'string']);
     });
   });
 
   describe('countOccurences', function () {
     it('correctly counts the number of occurrences for each word', function () {
-      book.getText();
-      book.splitText();
+      book.text = "this isn't a story, just a string!";
       expect(book.countOccurences()).toEqual({ this: 1, "isn't": 1, a: 2, story: 1, just: 1, string: 1 });
     });
   });
 
   describe('sortOccurences', function () {
     it('sorts the words by number of occurrences', function () {
-      book.getText();
-      book.splitText();
-      book.countOccurences();
+      book.glossary = ['this', "isn't", 'a', 'story', 'just', 'string'];
+      book.wordCounter = { this: 1, "isn't": 1, a: 2, story: 1, just: 1, string: 1 };
       expect(book.sortOccurences()).toEqual(['a', 'this', "isn't", 'story', 'just', 'string']);
     });
   });
 
   describe('printResults', function () {
     it('prints the words sorted by number of occurences', function () {
-      book.getText();
-      book.splitText();
-      book.countOccurences();
-      book.sortOccurences();
+      book.wordCounter = { this: 1, "isn't": 1, a: 2, story: 1, just: 1, string: 1 };
+      book.glossary = ['a', 'this', "isn't", 'story', 'just', 'string'];
       expect(book.printResults()).toEqual(['a - 2 prime', 'this - 1', "isn't - 1", 'story - 1', 'just - 1', 'string - 1']);
     });
   });

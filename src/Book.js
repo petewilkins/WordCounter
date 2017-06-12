@@ -75,11 +75,12 @@ Book.prototype.analyse = function () {
 };
 
 var fs = require('fs');
+var inputFile = process.argv[2];
 
-if (process.argv[2] === undefined) {
-  console.log('Incorrect number of arguments. Suggested use: npm start books/the-railway-children.txt');
-} else {
-  var textFromBook = fs.readFileSync(process.argv[2], 'utf8');
+if (fs.existsSync(inputFile)) {
+  var textFromBook = fs.readFileSync(inputFile, 'utf8');
   var book = new Book(textFromBook);
   book.analyse();
+} else {
+  console.log('Text file argument incorrect. Suggested use: npm start books/the-railway-children.txt');
 }
