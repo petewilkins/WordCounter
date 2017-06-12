@@ -71,3 +71,26 @@ Text file argument incorrect. Suggested use: npm start books/the-railway-childre
 
 - [NodeJS](https://nodejs.org/en/)
 (JavaScript runtime environment)
+
+### User Stories
+
+```
+As a User,
+So that I can see the most common words used in a book,
+I want to have a list of words in order of number of occurrences.
+```
+```
+As a User,
+So that I can how many times a word is used in a book,
+I want to see the number of occurrences for each word.
+```
+```
+As a User,
+So that I can impress my friends with my prime number knowledge,
+I want to see if the number of occurrences for each word is a prime number.
+```
+```
+As a User,
+So that I can count words in different books,
+I want to be able to give a specific text file to be analysed.
+```
