@@ -67,11 +67,11 @@ Book.prototype.numIsPrime = function (number) {
   return number > 1;
 };
 
-Book.prototype.Analyse = function () {
+Book.prototype.analyse = function () {
   this.getText();
   this.countOccurences();
   this.sortOccurences();
-  console.log(this.printResults());
+  return console.log(this.printResults());
 };
 
 var fs = require('fs');
@@ -81,5 +81,5 @@ if (process.argv[2] === undefined) {
 } else {
   var textFromBook = fs.readFileSync(process.argv[2], 'utf8');
   var book = new Book(textFromBook);
-  book.Analyse();
+  book.analyse();
 }

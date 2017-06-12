@@ -4,6 +4,24 @@ describe('Book', function () {
     book = new Book("This isn't a story, just a string!");
   });
 
+  describe('on initialization', function () {
+    it('text has the text from the book', function () {
+      expect(book.text).toEqual("This isn't a story, just a string!");
+    });
+
+    it('glossary is empty', function () {
+      expect(book.glossary.length).toEqual(0);
+    });
+
+    it('wordCounter is empty', function () {
+      expect(book.wordCounter).toEqual({});
+    });
+
+    it('wordsSorted is empty', function () {
+      expect(book.wordsSorted.length).toEqual(0);
+    });
+  });
+
   describe('getText', function () {
     it('returns the book text in lowercase', function () {
       expect(book.getText()).toEqual("this isn't a story, just a string!");
