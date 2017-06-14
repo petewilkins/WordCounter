@@ -1,0 +1,24 @@
+.navbar-brand>img{
+  width: 30px;
+  height: 30px;
+}
+
+.navbar-brand {
+  padding: 11px;
+}
+
+body {
+  padding-top: 70px;
+}
+
+td {
+  text-align: center;
+}
+
+.navbar-text {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+}
