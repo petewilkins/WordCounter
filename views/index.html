@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Word Counter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img alt="Brand" src="../images/icon.svg">
+        </a>
+        <p class="navbar-text">Word Counter</p>
+      </div>
+      <button type="button" class="btn btn-default navbar-btn navbar-right" id="github-button">Github</button>
+      <label class="btn btn-primary navbar-btn navbar-right" for="fileInput">
+        <input id="fileInput" type="file" style="display:none;">
+        Upload a text file
+      </label>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4 text-center">
+        <div id="wordOutput">
+        </div>
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="../src/Book.js"></script>
+  <script type="text/javascript" src="../src/Interface.js"></script>
+</body>
+</html>

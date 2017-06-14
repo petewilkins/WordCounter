@@ -1,0 +1,43 @@
+.navbar-brand>img{
+  width: 30px;
+  height: 30px;
+}
+
+.navbar-brand {
+  padding: 11px;
+}
+
+#github-button {
+  margin-left: 5px;
+}
+
+body {
+  padding-top: 70px;
+}
+
+td {
+  text-align: center;
+}
+
+.navbar-text {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+}
+
+#wordRow {
+  color: #34495e;
+  font-size: 24px;
+}
+
+#numberPrime {
+  font-size: 17px;
+  color: #27ae60;
+}
+
+#numberNotPrime {
+  font-size: 17px;
+  color: #2980b9;
+}

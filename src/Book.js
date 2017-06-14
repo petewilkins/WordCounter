@@ -49,13 +49,13 @@ Book.prototype.printResults = function () {
     var word = this.glossary[i];
 
     if (this.numIsPrime(this.wordCounter[word])) {
-      this.wordsSorted.push(word + ' - ' + this.wordCounter[word] + ' prime');
+      this.wordsSorted.push('<div id="wordRow"> <b id="word">' + word + '</b>  <b id="numberPrime">' + this.wordCounter[word] + ' times (prime) </b></div>');
     } else {
-      this.wordsSorted.push(word + ' - ' + this.wordCounter[word]);
+      this.wordsSorted.push('<div id="wordRow"> <b id="word">' + word + '</b>  <b id="numberNotPrime">' + this.wordCounter[word] + ' times</b></div>');
     }
   }
 
-  return this.wordsSorted;
+  return this.wordsSorted.join('');
 };
 
 Book.prototype.numIsPrime = function (number) {
@@ -71,16 +71,5 @@ Book.prototype.analyse = function () {
   this.getText();
   this.countOccurences();
   this.sortOccurences();
-  return console.log(this.printResults());
+  return this.printResults();
 };
-
-var fs = require('fs');
-var inputFile = process.argv[2];
-
-if (fs.existsSync(inputFile)) {
-  var textFromBook = fs.readFileSync(inputFile, 'utf8');
-  var book = new Book(textFromBook);
-  book.analyse();
-} else {
-  console.log('Text file argument incorrect. Suggested use: npm start books/the-railway-children.txt');
-}
