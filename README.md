@@ -2,6 +2,10 @@
 
 A Javascript application which takes a book as an input text file and outputs how many times each word occurs in the book. It also displays whether the number of occurrences for each word is a prime number or not.
 
+Have a go at [http://wordcounter-pw.herokuapp.com](http://wordcounter-pw.herokuapp.com/)
+
+![Demo gif](./img/wordcounter-gif.gif)
+
 The application ignores irrelevant punctuation and capitalisation.
 ```
 'Question' and 'Question?' are both counted as the same word.
@@ -36,30 +40,18 @@ $ npm test
 ```
 A window should open in your browser and run the tests using Jasmine.
 
-![alt text](http://i.imgur.com/AHVmh0m.png)
-
 **4. Run Application**
 
-Make sure you're in the WordCounter directory. The path to a text file should be provided as the third argument. Two example files are included in the books/ directory which can be run as shown below.
-
-```
-$ npm start books/the-railway-children.txt
-$ npm start books/lorem-ipsum.txt
-```
-
-**5. Error Handling**
-
-Error messages are shown if no text file is provided or if the file name provided does not exist.
+Make sure you're in the WordCounter directory.
 
 ```
 $ npm start
-
-Text file argument incorrect. Suggested use: npm start books/the-railway-children.txt
-
-$ npm start an-invalid-text-file.txt
-
-Text file argument incorrect. Suggested use: npm start books/the-railway-children.txt
 ```
+- Head to `http://localhost:8000/` in your browser of choice!
+
+**5. Error Handling**
+
+Error messages are shown if the file selected is not a valid .txt or .html file.
 
 
 ### Technologies used
@@ -71,6 +63,9 @@ Text file argument incorrect. Suggested use: npm start books/the-railway-childre
 
 - [NodeJS](https://nodejs.org/en/)
 (JavaScript runtime environment)
+
+- [Heroku](https://herokuapp.com/)
+(Application deployment)
 
 ### User Stories
 
