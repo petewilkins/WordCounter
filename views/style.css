@@ -7,6 +7,10 @@
   padding: 11px;
 }
 
+#github-button {
+  margin-left: 5px;
+}
+
 body {
   padding-top: 70px;
 }
