@@ -22,3 +22,18 @@ td {
 	font-variant: normal;
 	font-weight: 400;
 }
+
+#wordRow {
+  color: #34495e;
+  font-size: 24px;
+}
+
+#numberPrime {
+  font-size: 17px;
+  color: #27ae60;
+}
+
+#numberNotPrime {
+  font-size: 17px;
+  color: #2980b9;
+}

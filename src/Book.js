@@ -49,9 +49,9 @@ Book.prototype.printResults = function () {
     var word = this.glossary[i];
 
     if (this.numIsPrime(this.wordCounter[word])) {
-      this.wordsSorted.push('<div id="wordPrime">' + word + ' - ' + this.wordCounter[word] + ' prime </div>');
+      this.wordsSorted.push('<div id="wordRow"> <b id="word">' + word + '</b>  <b id="numberPrime">' + this.wordCounter[word] + ' times (prime) </b></div>');
     } else {
-      this.wordsSorted.push('<div id="wordNotPrime">' + word + ' - ' + this.wordCounter[word] + '</div>');
+      this.wordsSorted.push('<div id="wordRow"> <b id="word">' + word + '</b>  <b id="numberNotPrime">' + this.wordCounter[word] + ' times</b></div>');
     }
   }
 

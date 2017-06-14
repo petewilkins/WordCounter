@@ -17,7 +17,7 @@ window.onload = function () {
         wordOutput.innerHTML = book.analyse();
       };
     } else {
-      alert('Please select a valid .txt file');
+      alert('Please select a valid text file (.txt, .html)');
     }
   });
 };
