@@ -49,9 +49,9 @@ Book.prototype.printResults = function () {
     var word = this.glossary[i];
 
     if (this.numIsPrime(this.wordCounter[word])) {
-      this.wordsSorted.push(word + ' - ' + this.wordCounter[word] + ' prime');
+      this.wordsSorted.push('<p>' + word + ' - ' + this.wordCounter[word] + ' prime');
     } else {
-      this.wordsSorted.push(word + ' - ' + this.wordCounter[word]);
+      this.wordsSorted.push('<p>' + word + ' - ' + this.wordCounter[word]);
     }
   }
 
@@ -71,5 +71,5 @@ Book.prototype.analyse = function () {
   this.getText();
   this.countOccurences();
   this.sortOccurences();
-  return console.log(this.printResults());
+  return this.printResults();
 };

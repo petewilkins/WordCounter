@@ -13,9 +13,8 @@ window.onload = function () {
 
       fileReader.onload = function () {
         var book = new Book(fileReader.result);
-        book.analyse();
 
-        // wordListArea.innerHTML = listWords.wrapWordsInHtml(wordArray).join(' ');
+        wordOutput.innerHTML = book.analyse();
       };
     } else {
       alert('Please select a valid .txt file');
