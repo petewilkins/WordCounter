@@ -73,14 +73,3 @@ Book.prototype.analyse = function () {
   this.sortOccurences();
   return console.log(this.printResults());
 };
-
-var fs = require('fs');
-var inputFile = process.argv[2];
-
-if (fs.existsSync(inputFile)) {
-  var textFromBook = fs.readFileSync(inputFile, 'utf8');
-  var book = new Book(textFromBook);
-  book.analyse();
-} else {
-  console.log('Text file argument incorrect. Suggested use: npm start books/the-railway-children.txt');
-}
