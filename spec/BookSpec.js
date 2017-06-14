@@ -29,7 +29,12 @@ describe('Book', function () {
   });
 
   describe('splitText', function () {
-    it('splits input text into an array of words ignoring punctuation', function () {
+    it('splits input text into an array of words', function () {
+      book.text = 'words should be split';
+      expect(book.splitText()).toEqual(['words', 'should', 'be', 'split']);
+    });
+
+    it('ignores punctuation', function () {
       book.text = "this isn't a story, just a string!";
       expect(book.splitText()).toEqual(['this', "isn't", 'a', 'story', 'just', 'a', 'string']);
     });
@@ -51,10 +56,10 @@ describe('Book', function () {
   });
 
   describe('printResults', function () {
-    it('prints the words sorted by number of occurences', function () {
-      book.wordCounter = { this: 1, "isn't": 1, a: 2, story: 1, just: 1, string: 1 };
-      book.glossary = ['a', 'this', "isn't", 'story', 'just', 'string'];
-      expect(book.printResults()).toEqual(['a - 2 prime', 'this - 1', "isn't - 1", 'story - 1', 'just - 1', 'string - 1']);
+    it('prints the words and occurrences surrounded by html tags', function () {
+      book.wordCounter = { this: 1, a: 2 };
+      book.glossary = ['a', 'this'];
+      expect(book.printResults()).toContain('<div id="wordRow"> <b id="word">a</b>  <b id="numberPrime">2 times (prime) </b></div>');
     });
   });
 
@@ -65,6 +70,14 @@ describe('Book', function () {
 
     it('returns false if the number passed to it is not prime', function () {
       expect(book.numIsPrime(368)).toBe(false);
+    });
+
+    it('returns false if the number passed to it is a zero', function () {
+      expect(book.numIsPrime(0)).toBe(false);
+    });
+
+    it('returns false if the number passed to it is a negative number', function () {
+      expect(book.numIsPrime(-2)).toBe(false);
     });
   });
 });
