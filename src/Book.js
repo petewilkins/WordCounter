@@ -49,13 +49,13 @@ Book.prototype.printResults = function () {
     var word = this.glossary[i];
 
     if (this.numIsPrime(this.wordCounter[word])) {
-      this.wordsSorted.push('<p>' + word + ' - ' + this.wordCounter[word] + ' prime');
+      this.wordsSorted.push('<div id="wordPrime">' + word + ' - ' + this.wordCounter[word] + ' prime </div>');
     } else {
-      this.wordsSorted.push('<p>' + word + ' - ' + this.wordCounter[word]);
+      this.wordsSorted.push('<div id="wordNotPrime">' + word + ' - ' + this.wordCounter[word] + '</div>');
     }
   }
 
-  return this.wordsSorted;
+  return this.wordsSorted.join('');
 };
 
 Book.prototype.numIsPrime = function (number) {
